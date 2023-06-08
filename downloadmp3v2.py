@@ -35,6 +35,17 @@ cRect3.place(x=480, y=30)
 title = Label(main_window, text = "YouTube to MP3 Downloader", fg = 'white', bg= "#535353", font=("System", 20))
 title.place(x=60, y=50)
 
+instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#535353", font=("System", 14, "bold"))
+instructions.place(x=60, y=110)
+
+i_text1 = Label(main_window, text = "Copy the URL of the YouTube video you want to ", fg = 'white', bg = "#535353", font=("System", 14))
+i_text2 = Label(main_window, text= " download. Then enter the path of the folder you ", fg = 'white', bg = "#535353", font=("System", 14))
+i_text3 = Label(main_window, text=" want your mp3 to be downloaded to", fg = 'white', bg = "#535353", font=("System", 14))
+
+i_text1.place(x=60, y=140)
+i_text2.place(x=60, y=160)
+i_text3.place(x=60, y=180)
+
 main_window.mainloop()
 
 def download():
