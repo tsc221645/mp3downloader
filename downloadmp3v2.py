@@ -9,7 +9,6 @@ from pytube import YouTube
 import os
 from tkinter import *
 
-
 #main window -------------------------------------------------------------------------------------------------------------------------------------------------------------
 main_window = Tk(className = "mp3downloader")
 main_window.geometry("1180x900")
@@ -40,7 +39,7 @@ video_example_label = Label(main_window, text= "Example:  https://www.youtube.co
 video_example_label.place(x=510, y=140)
 
 #input label for video URL
-url_input = Entry(main_window, width=16, fg = 'white', bg= "#121212", font=("System", 14))
+url_input = Entry(main_window, width=30, fg = 'white', bg= "#121212", font=("System", 14))
 url_input.place(x=510, y=170)
 
 #labels for path
@@ -50,39 +49,37 @@ path_label.place(x=500, y=210)
 path_example_label.place(x=510, y=230)
 
 #input label for path
-path_input = Entry(main_window, width=16, fg = 'white', bg= "#121212", font=("System", 14,) )
+path_input = Entry(main_window, width=30, fg = 'white', bg= "#121212", font=("System", 14,) )
 path_input.place(x=510, y=260)
 
+#instruction text
 instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#212121", font=("System", 14, "bold", 'underline'))
 instructions.place(x=60, y=110)
 
 i_text1 = Label(main_window, text = "Copy the URL of the YouTube video you want to ", fg = 'white', bg = "#212121", font=("System", 14))
 i_text2 = Label(main_window, text= " download. Then enter the path of the folder you ", fg = 'white', bg = "#212121", font=("System", 14))
 i_text3 = Label(main_window, text=" want your mp3 to be downloaded to.", fg = 'white', bg = "#212121", font=("System", 14))
-
 i_text1.place(x=60, y=140)
 i_text2.place(x=60, y=160)
 i_text3.place(x=60, y=180)
 
-#functions ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+#download function ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 def download():
-    #yt = YouTube(input('Enter the Url of the video you want to download: '))
+    yt = ''
     yt2 = url_input.get()
     yt2 = str(yt2)
     yt =YouTube(yt2)
     video = yt.streams.filter(only_audio=True).first()
-    #destination = "/Users/flami/Music/spotify"
     destination = path_input.get()
     out_file = video.download(output_path=destination)
     base, ext = os.path.splitext(out_file)
     new_file = base + '.mp3'
     os.rename(out_file, new_file)
+    #terminal print to show video has been downloaded
     print(yt.title + ' has been successfully downloaded')
 
 #buttons -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-b1 = Button(text="GO!", bg="#1db954", fg = "white", font=("System", 20), command=download())
+b1 = Button(text="GO!", bg="#1db954", fg = "white", font=("System", 20), command=download)
 b1.place(x=750, y= 600)
 
-
 main_window.mainloop()
-
