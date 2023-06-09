@@ -15,32 +15,35 @@ main_window.geometry("1180x900")
 
 #background -------------------------------------------------
 cRect1 = Canvas(width=1180, height=800)
-cRect1.create_rectangle(1180,800,0,0, outline='#272727', fill="#272727")
+cRect1.create_rectangle(1180,800,0,0, outline='#121212', fill="#121212")
 cRect1.place(x=0, y=0)
 
 #shapes -----------------------------------------------------
 cRect2 = Canvas(width=400, height=700)
-cRect2.create_rectangle(1080,700,0,0, outline='#535353', fill="#535353", width=20 )
+cRect2.create_rectangle(1080,700,0,0, outline='#212121', fill="#212121", width=20 )
 cRect2.place(x=50, y=30)
 
 cRect3 = Canvas(width=650, height=700)
-cRect3.create_rectangle(1080,700,0,0, outline='#535353', fill="#535353", width=20 )
+cRect3.create_rectangle(1080,700,0,0, outline='#212121', fill="#212121", width=20 )
 cRect3.place(x=480, y=30)
 
 #buttons ----------------------------------------------------
+b1 = Button(text="GO!", bg="#1db954", fg = "white", font=("System", 20))
+b1.place(x=750, y= 600)
+
 
 #inputs ------------------------------------------------------
 
 #labels -----------------------------------------------------
-title = Label(main_window, text = "YouTube to MP3 Downloader", fg = 'white', bg= "#535353", font=("System", 20))
+title = Label(main_window, text = "YouTube to MP3 Downloader", fg = 'white', bg= "#212121", font=("System", 20))
 title.place(x=60, y=50)
 
-instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#535353", font=("System", 14, "bold"))
+instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#212121", font=("System", 14, "bold"))
 instructions.place(x=60, y=110)
 
-i_text1 = Label(main_window, text = "Copy the URL of the YouTube video you want to ", fg = 'white', bg = "#535353", font=("System", 14))
-i_text2 = Label(main_window, text= " download. Then enter the path of the folder you ", fg = 'white', bg = "#535353", font=("System", 14))
-i_text3 = Label(main_window, text=" want your mp3 to be downloaded to", fg = 'white', bg = "#535353", font=("System", 14))
+i_text1 = Label(main_window, text = "Copy the URL of the YouTube video you want to ", fg = 'white', bg = "#212121", font=("System", 14))
+i_text2 = Label(main_window, text= " download. Then enter the path of the folder you ", fg = 'white', bg = "#212121", font=("System", 14))
+i_text3 = Label(main_window, text=" want your mp3 to be downloaded to.", fg = 'white', bg = "#212121", font=("System", 14))
 
 i_text1.place(x=60, y=140)
 i_text2.place(x=60, y=160)
