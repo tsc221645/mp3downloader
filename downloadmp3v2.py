@@ -38,7 +38,27 @@ b1.place(x=750, y= 600)
 title = Label(main_window, text = "YouTube to MP3 Downloader", fg = 'white', bg= "#212121", font=("System", 20))
 title.place(x=60, y=50)
 
-instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#212121", font=("System", 14, "bold"))
+#labels for video URL
+video_label = Label(main_window, text= "Enter YouTube URL here: ", fg = 'white', bg= "#212121", font=("System", 16, 'underline'))
+video_label.place(x=500, y=110)
+video_example_label = Label(main_window, text= "Example:  https://www.youtube.com/watch?v=dQw4w9WgXcQ ", fg = '#b3b3b3', bg= "#212121", font=("System", 10))
+video_example_label.place(x=510, y=140)
+
+#input label for video URL
+url_input = Entry(main_window, width=16, fg = 'white', bg= "#121212", font=("System", 14,) )
+url_input.place(x=510, y=170)
+
+#labels for path
+path_label = Label(main_window, text= "Enter Folder path here: ", fg = 'white', bg= "#212121", font=("System", 16))
+path_example_label = Label(main_window, text= "Example:  /Users/user1/Music  ", fg = '#b3b3b3', bg= "#212121", font=("System", 10))
+path_label.place(x=500, y=210)
+path_example_label.place(x=510, y=230)
+
+#input label for path
+path_input = Entry(main_window, width=16, fg = 'white', bg= "#121212", font=("System", 14,) )
+path_input.place(x=510, y=260)
+
+instructions = Label(main_window, text = "Instructions:", fg = 'white', bg = "#212121", font=("System", 14, "bold", 'underline'))
 instructions.place(x=60, y=110)
 
 i_text1 = Label(main_window, text = "Copy the URL of the YouTube video you want to ", fg = 'white', bg = "#212121", font=("System", 14))
